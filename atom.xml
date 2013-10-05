@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://jiecaoc.github.io/atom.xml" rel="self"/>
   <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-05T03:54:10-05:00</updated>
+  <updated>2013-10-05T18:25:15-05:00</updated>
   <id>http://jiecaoc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[创建自己的 Mathematica 版 Diff]]></title>
+    <link href="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff/"/>
+    <updated>2013-10-05T18:21:00-05:00</updated>
+    <id>http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff</id>
+    <content type="html"><![CDATA[<p>大家在学习动态规划的时候也许都接触过求[最长公共子序列(LCS)][1]算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n<sup>2</sup>)$, 这里的 $n$ 表示的是两个被对比序列的最大长度.</p>
+]]></content>
+  </entry>
   
 </feed>
