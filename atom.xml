@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://jiecaoc.github.io/atom.xml" rel="self"/>
   <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-05T18:25:15-05:00</updated>
+  <updated>2013-10-05T18:28:59-05:00</updated>
   <id>http://jiecaoc.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -18,7 +18,21 @@
     <link href="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff/"/>
     <updated>2013-10-05T18:21:00-05:00</updated>
     <id>http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff</id>
-    <content type="html"><![CDATA[<p>大家在学习动态规划的时候也许都接触过求[最长公共子序列(LCS)][1]算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n<sup>2</sup>)$, 这里的 $n$ 表示的是两个被对比序列的最大长度.</p>
+    <content type="html"><![CDATA[<p>大家在学习动态规划的时候也许都接触过求<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列(LCS)</a>算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n<sup>2</sup>)$, 这里的 $n$ 表示的是两个被对比序列的最大长度.</p>
+
+<p>大家如果对<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列</a>感兴趣的话, 互联网上有许多相关的资料, 至少在这篇 post 里我们不会深入这个话题. 我们的今天主题和这个算法有很密切的关系, 因为我们将使用 <code>Mathematica</code> 内置的函数 <a href="http://reference.wolfram.com/mathematica/ref/SequenceAlignment.zh.html"><code>SequenceAlignment</code></a> 来构建一个 <code>Mathematica</code> 版本 <a href="http://en.wikipedia.org/wiki/Diff"><code>diff</code></a> 的函数, 而<a href="http://reference.wolfram.com/mathematica/ref/SequenceAlignment.zh.html"><code>SequenceAlignment</code></a> 背后使用的算法就恰恰是 LCS 的经典动态规划算法 (事实上也有 $O(n \log n)$ 的算法, 在后来的版本中, <code>SequenceAlignment</code> 采用的也许是那种算法). 借助于 <code>Mathematica</code> 的前端, 这个函数将会有更漂亮的输出结果.(这里插一句, unix 下面的 <a href="http://en.wikipedia.org/wiki/Diff"><code>diff</code></a> 也是用 LCS 算法实现的).</p>
+
+<p>PS:</p>
+
+<ul>
+<li>在文章的前一部分讨论了部分实现的原理, 如果读者只是希望在 <code>Mathematica</code> 中有一个很好的 <code>diff</code> 函数的话, 可以跳过那些内容, 直接复制源代码就可以了. 也可以直接在<a href="https://github.com/MathCraft/MathCraftAddOn/blob/master/MathCraftAddOn/MathCraftAddOn/TextUtilities.m">这里</a>直接下载我写好的 package.</li>
+<li>要理解源代码, 读者至少需要对 <code>Mathematica</code> 中的模式匹配, 函数式编程都有初步的了解. 我不会在此文中解释 <code>/@</code> 是什么算符, <code>__String</code> 又能代表什么. 读者可以查 <code>Mathematica</code> 文档去了解他们的用途.</li>
+</ul>
+
+
+<h1>核心函数</h1>
+
+<p><code>SequenceAlignment</code> 是我们实现 <code>diff</code> 所需要用到的核心内置函数. 出于效率的考虑, 在 <code>Mathematica</code> 的实现中, 它是直接用 <code>C</code> 写的. 在我们的例子, 并不用考虑该<a href="http://reference.wolfram.com/mathematica/ref/SequenceAlignment.zh.html">文档</a>中的诸多选项参数, 我们只需要用到这个函数最简单的功能. <code>SequenceAlignment</code> 可以作用在两个list上, 例如:</p>
 ]]></content>
   </entry>
   
