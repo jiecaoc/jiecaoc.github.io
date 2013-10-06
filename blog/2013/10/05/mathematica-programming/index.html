@@ -1,24 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[CJC's Blog]]></title>
-  <link href="http://jiecaoc.github.io/atom.xml" rel="self"/>
-  <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-05T20:19:30-05:00</updated>
-  <id>http://jiecaoc.github.io/</id>
-  <author>
-    <name><![CDATA[Jiecao Chen]]></name>
-    
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>把 Mathematica 当做一种编程语言 - CJC's Blog</title>
+  <meta name="author" content="Jiecao Chen">
 
   
-  <entry>
-    <title type="html"><![CDATA[把 Mathematica 当做一种编程语言]]></title>
-    <link href="http://jiecaoc.github.io/blog/2013/10/05/mathematica-programming/"/>
-    <updated>2013-10-05T20:14:00-05:00</updated>
-    <id>http://jiecaoc.github.io/blog/2013/10/05/mathematica-programming</id>
-    <content type="html"><![CDATA[<p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
+  <meta name="description" content="在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://jiecaoc.github.io/blog/2013/10/05/mathematica-programming">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="CJC's Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">CJC's Blog</a></h1>
+  
+    <h2>Reading | Thinking | Writing.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:jiecaoc.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">把 Mathematica 当做一种编程语言</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-05T20:14:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
 
 <p>实际上，尽管 Mathematica 脱胎于 Stephen Wolfram 最早的 SMP 符号操作程序，但却是作为一种编程语言被设计的。Mathematica 的底层解释器大部分由 C 语言写成，此外一些极端要求速度的基础计算函数也由 C 语言支持， 而其他大量的实用函数以及包由则是由 Mathematica 编程语言来实现的。解释器和这些函数构成了所谓的 Mathematica Kernel。Mathematica 这个生态系统的另外一个重要组成部分是前端（Front End），大量美轮美奂的数学公式显示，图形绘制，文档排版功能都极大程度地依赖前端，而前端和 Kernel 之间通过 MathLink 进行交互。Front End 和 Kernel 被设计得相当独立，尽管并不普遍，但是Front End实际上是可以被当做独立的软件来使用的，用户可以在上面编辑文字公式，生成漂亮的文档、演示文稿，绘制图形等等。</p>
 
@@ -41,28 +114,108 @@
 <p>其次是 Power Programming With Mathematica: The Kernel。 这1996年出版的本书由于着眼于Mathematica Kernel 的一些基本的实现机制，到现在也没有过时，讲得很深，如果完全掌握，你应该有水平在 mathematica.stackexchange.com 回答很多深层次的问题了。此书在网上非常罕见，造福大家，我也把找了很久的电子版和大家分享 Link。 作者好像是华盛顿大学的 CS Phd， 后来做过 AP，然后开咨询公司，再后来我就不晓得了。</p>
 
 <p>还有一本，The Mathematica Programmer （I, II），从 Mathematica 作为载体讲 CS 的。 作者是Roman E. Maeder。 此人在八十年代在 UIUC 作访问教授，结识了当时在那儿人教的 Stephen Wolfram，合作开发了 Mathematica 的第一个版本。现在他好像是 ETH Zurich 的计算机系教授，还开了一个半吊子的咨询公司。这本书我就没法提供链接了，我自己倒是有纸质的书。</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-  <entry>
-    <title type="html"><![CDATA[创建自己的 Mathematica 版 Diff]]></title>
-    <link href="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff/"/>
-    <updated>2013-10-05T18:21:00-05:00</updated>
-    <id>http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff</id>
-    <content type="html"><![CDATA[<h1>title</h1>
 
-<h2>subtitle</h2>
+<span class="byline author vcard">Posted by <span class="fn">Jiecao Chen</span></span>
 
-<p>内容</p>
+      
 
-<h2>xx</h2>
 
-<p>sss</p>
 
-<h2>daf</h2>
 
-<p>冯绍峰</p>
-]]></content>
-  </entry>
+
+
+
+
   
-</feed>
+
+
+<time datetime="2013-10-05T20:14:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jiecaoc.github.io/blog/2013/10/05/mathematica-programming/" data-via="" data-counturl="http://jiecaoc.github.io/blog/2013/10/05/mathematica-programming/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/10/05/createyouowndiff/" title="Previous Post: 创建自己的 Mathematica 版 Diff">&laquo; 创建自己的 Mathematica 版 Diff</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/05/mathematica-programming/">把 Mathematica 当做一种编程语言</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/05/createyouowndiff/">创建自己的 Mathematica 版 Diff</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jiecao Chen -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
