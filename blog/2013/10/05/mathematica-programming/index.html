@@ -9,7 +9,7 @@
   <meta name="author" content="Jiecao Chen">
 
   
-  <meta name="description" content="在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 &hellip;">
+  <meta name="description" content="Mathematica 在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,21 +93,33 @@
   </header>
 
 
-<div class="entry-content"><p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
+<div class="entry-content"><h2>Mathematica</h2>
+
+<p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
 
 <p>实际上，尽管 Mathematica 脱胎于 Stephen Wolfram 最早的 SMP 符号操作程序，但却是作为一种编程语言被设计的。Mathematica 的底层解释器大部分由 C 语言写成，此外一些极端要求速度的基础计算函数也由 C 语言支持， 而其他大量的实用函数以及包由则是由 Mathematica 编程语言来实现的。解释器和这些函数构成了所谓的 Mathematica Kernel。Mathematica 这个生态系统的另外一个重要组成部分是前端（Front End），大量美轮美奂的数学公式显示，图形绘制，文档排版功能都极大程度地依赖前端，而前端和 Kernel 之间通过 MathLink 进行交互。Front End 和 Kernel 被设计得相当独立，尽管并不普遍，但是Front End实际上是可以被当做独立的软件来使用的，用户可以在上面编辑文字公式，生成漂亮的文档、演示文稿，绘制图形等等。</p>
 
 <p>个人感觉，学习 Mathematica 编程，至少有三点是一定需要了解的：“Everything is Expression” 的语言设计原则、“规则替换”的系统实现机理和“模式匹配”引擎的强大效用。</p>
 
+<h2>Everything is a Expression</h2>
+
 <p>从设计上来说，Mathematica 遵循 “Everything is Expression” 的哲学，这种哲学可以大大简化解释器的设计，也可以产生“统一”的数学美感。关于这一点，有些读者可能会知道对于任何公式函数以及符号，当我们用 FullForm 这个函数作用于其上的， 就能求出该公式函数或符号的“完全形式”，而 FullForm 通常遵循这样的形式： <code>head[arg1, arg2, ..., argn]</code>.    这就是一个 Mathematica 表达式， 甚至对于 <code>1, 2, 3</code>这样粗看和表达式并不相关的序列，也是表达式的一种，它的 <code>FullForm</code> 为 <code>Sequence[1, 2, 3]</code>， 不仅如此， 连 Cell 、模式、甚至 notebook 本身都是某种形式的 Expression. 对于 Kernel 而言，只有 <code>FullForm</code> 是有意义的，其他的类如 <code>TraditionForm</code> 、<code>InputForm</code> 都和表达式在前端的行为有关，而对 Kernel 的工作并没有太大作用。此处不深入，但是深入学习 Mathematica 后读者肯定会发现，了解这个设计哲学好处多多，在对 Mathematica 的对象进行操作时，脑子里有它完整的表达式形式能帮助你随心所欲地控制它。</p>
+
+<h2>规则替换机制</h2>
 
 <p>而实际计算的时候，Mathematica 则是一个基于规则替换的系统 （Rule-Based system）。规则替换系统是 Mathematica 能够进行计算的源动力。大家可能看到过类似 <code>x^y //. {x -&gt; 2, y -&gt; 3}</code> 这样的代码，这里 <code>{x -&gt; 2, y -&gt; 3}</code> 就是一个关于 规则的列表， <code>//.</code> 符号是 <code>ReplaceRepeated</code> 函数的简写， <code>x^y</code> 是一个表达式，代码 <code>x^y //. {x -&gt; 2, y -&gt; 3}</code> 做的事情就是在规则表<code>{x -&gt; 2, y -&gt; 3}</code> 中挑选规则，对表达式 <code>x^y</code> 不断地进行变换，直到变到不能变化为止。Mathematica 整个系统的计算机制和这段简单的代码有的本质上的类似，它也不过是在维护一个规则库，利用规则库中的规则对出现的表达式按照某些规范进行不断地替换，直到表达式不再变动为止，这时候就说“计算出了结果”。</p>
 
+<h2>模式匹配引擎</h2>
+
 <p>“规则替换”这样简单的机制能够实现 Mathematica 这个复杂系统的绚丽多彩的系统的一个重要的后盾是 Mathematica 的模式匹配引擎。大家可能已经见到过类似 <code>_ ，__ ， ___</code> ，这样简单的模式（pattern）， 也有肯能见过稍微复杂的 <code>Verbatim[Rule][_List, _Integer]</code>。 就像在 正则表达式中的通配符等语法一样，他们用来定义一些模式用于匹配，只不过正则表达式用来匹配字符串，而 Mathematica 中的 Pattern 用来匹配 Expression。</p>
+
+<h2>其他讨论</h2>
 
 <p>除了上面的三点，还有一些话题也可以提一下，比如我认为 <code>For</code>、 <code>While</code> 这样的函数在 Mathematica 中出现很大的原因是为了迁就被过程式编程语言所局限的一部分用户，Mathematica 并不适合用来编写过程式风格的代码，多数情况下，基于函数式编程思想和模式匹配规则替换思维的代码会跑得更快并且更容易进行分布式运算。Mathematica 从 Lisp 等语言中继承了大量的优秀品质，尤其适合编写函数式风格的程序，但我还是要提醒一下诸位，不同于一些传统的函数式语言，“函数”并不是 Mathematica的基本单位和基本考察对象，Expression 才是本质的，函数只是在模式（Pattern）包裹下的一种特别的表达式而已。从 Mathematica 的美学观点看，过于过程式的代码也往往会被认为是丑陋的。</p>
 
 <p>非常让人惋惜，Mathematica 作为一种编程语言并没有很好地被传播，它的优雅之处即使在 CS 的圈子里也只有少部分的人能深刻体会。这种现象有很大一部分原因是因为它是一个商业软件（广大中国用户使用盗版不用付半分钱并不会改变 Mathematica 的商业性质）。据说 Google 的创始人 Sergey Brin 于1993年的暑期在 Wolfram Research 实习的时候，曾想说服大家把 Mathematica 的 Kernel 变得更加模块化一些，使得属于“语言特性”的那部分和各种数学、科学计算代码分离开来，并且免费发布只支持“编程语言”部分的解释器，公司盈利则利用 Package 的 License。 很可惜这个想法没有被最终实践，否则 Mathematica 的今天会完全不同。Wolfram Research 似乎渐渐向朝开放方向努力了，CDF player 就是一个很好的例子。 它是一个 CDF  文档（包含 Mathematica 代码） 的解释器，可以解释运行 Mathematica 代码，并且是免费的，可以作为浏览器插件下载安装。这是一个很好的开始，希望 Stephen Wolfram 能把这条路走得更远。</p>
+
+<h2>书籍推荐</h2>
 
 <p>最后推荐几本 Mathematica 编程相关的书籍 （很可惜都是英文的，但是中文版的有人在翻译，相信不久可以让大家读到中文版）。</p>
 
