@@ -4,7 +4,7 @@
   <title><![CDATA[CJC's Blog]]></title>
   <link href="http://jiecaoc.github.io/atom.xml" rel="self"/>
   <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-05T20:35:22-05:00</updated>
+  <updated>2013-10-05T20:38:07-05:00</updated>
   <id>http://jiecaoc.github.io/</id>
   <author>
     <name><![CDATA[Jiecao Chen]]></name>
@@ -21,6 +21,11 @@
     <content type="html"><![CDATA[<h2>Mathematica</h2>
 
 <p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
+
+<!-- more -->
+
+
+<p></p>
 
 <p>实际上，尽管 Mathematica 脱胎于 Stephen Wolfram 最早的 SMP 符号操作程序，但却是作为一种编程语言被设计的。Mathematica 的底层解释器大部分由 C 语言写成，此外一些极端要求速度的基础计算函数也由 C 语言支持， 而其他大量的实用函数以及包由则是由 Mathematica 编程语言来实现的。解释器和这些函数构成了所谓的 Mathematica Kernel。Mathematica 这个生态系统的另外一个重要组成部分是前端（Front End），大量美轮美奂的数学公式显示，图形绘制，文档排版功能都极大程度地依赖前端，而前端和 Kernel 之间通过 MathLink 进行交互。Front End 和 Kernel 被设计得相当独立，尽管并不普遍，但是Front End实际上是可以被当做独立的软件来使用的，用户可以在上面编辑文字公式，生成漂亮的文档、演示文稿，绘制图形等等。</p>
 
