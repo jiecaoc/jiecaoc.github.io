@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>math test - CJC's Blog</title>
+  <title>Latex test - CJC's Blog</title>
   <meta name="author" content="Jiecao Chen">
 
   
   <meta name="description" content="test for math
+$\sum_n x^2 = 1$
 ">
   
 
@@ -30,6 +31,37 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   
 
@@ -71,7 +103,7 @@
   
   <header>
     
-      <h1 class="entry-title">Math Test</h1>
+      <h1 class="entry-title">Latex Test</h1>
     
     
       <p class="meta">
@@ -94,7 +126,8 @@
   </header>
 
 
-<div class="entry-content"><h1>test for math</h1>
+<div class="entry-content"><h1 id="test-for-math">test for math</h1>
+<p>$\sum_n x^2 = 1$</p>
 </div>
 
 
@@ -150,7 +183,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/10/05/math-test/">Math Test</a>
+        <a href="/blog/2013/10/05/math-test/">Latex Test</a>
       </li>
     
       <li class="post">

@@ -10,6 +10,7 @@
 
   
   <meta name="description" content="test for math
+$\sum_n x^2 = 1$
 ">
   
 
@@ -30,6 +31,37 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   
 
@@ -74,7 +106,7 @@
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/10/05/math-test/">Math Test</a></h1>
+      <h1 class="entry-title"><a href="/blog/2013/10/05/math-test/">Latex Test</a></h1>
     
     
       <p class="meta">
@@ -97,7 +129,8 @@
   </header>
 
 
-  <div class="entry-content"><h1>test for math</h1>
+  <div class="entry-content"><h1 id="test-for-math">test for math</h1>
+<p>$\sum_n x^2 = 1$</p>
 </div>
   
   
@@ -133,8 +166,7 @@
   </header>
 
 
-  <div class="entry-content"><h2>Mathematica</h2>
-
+  <div class="entry-content"><h2 id="mathematica">Mathematica</h2>
 <p>在很大一部分 Mathematica 用户眼中， Mathematica 只不过是一个兼有符号操作和数值计算功能、用户界面良好的计算软件而已，由于中文资料的相对缺乏，这一点在中文用户中尤其严重。稍微挑选基本在互联网上可见的中文本土教程，比如张韵华、王新茂教授等人编著的 Mathematica 7 实用教程，徐安农所编写的 Mathematica 数学实验 等等，基本上从软件教学的层面编写的。从编程语言、计算机科学角度编写的中文资料，即使有，也是相当贫瘠的。</p>
 
 </div>
@@ -176,21 +208,14 @@
   </header>
 
 
-  <div class="entry-content"><h1>title</h1>
+  <div class="entry-content"><p>大家在学习动态规划的时候也许都接触过求<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列(LCS)</a>算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n^2)$, 这里的 $n$ 表示的是两个被对比序列的最大长度.</p>
 
-<h2>subtitle</h2>
-
-<p>内容</p>
-
-<h2>xx</h2>
-
-<p>sss</p>
-
-<h2>daf</h2>
-
-<p>冯绍峰</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/10/05/createyouowndiff/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -209,7 +234,7 @@
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/10/05/math-test/">Math Test</a>
+        <a href="/blog/2013/10/05/math-test/">Latex Test</a>
       </li>
     
       <li class="post">
