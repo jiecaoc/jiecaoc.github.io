@@ -4,7 +4,7 @@
   <title><![CDATA[CJC's Blog]]></title>
   <link href="http://jiecaoc.github.io/atom.xml" rel="self"/>
   <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-17T21:37:02-05:00</updated>
+  <updated>2013-10-17T21:44:49-05:00</updated>
   <id>http://jiecaoc.github.io/</id>
   <author>
     <name><![CDATA[Jiecao Chen]]></name>
@@ -32,16 +32,6 @@
 <h2 id="part-0">Part 0</h2>
 <p>Including introduction to information theory, probability, entropy, and inference. 
 <a href="../mackay-part-0">Link</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Latex test]]></title>
-    <link href="http://jiecaoc.github.io/blog/2013/10/05/math-test/"/>
-    <updated>2013-10-05T20:46:00-05:00</updated>
-    <id>http://jiecaoc.github.io/blog/2013/10/05/math-test</id>
-    <content type="html"><![CDATA[<h1 id="test-for-math">test for math</h1>
-<p>$\sum_n x^2 = 1$</p>
 ]]></content>
   </entry>
   
