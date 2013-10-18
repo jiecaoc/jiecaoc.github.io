@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Reading Notes | CJC's Blog]]></title>
   <link href="http://jiecaoc.github.io/blog/categories/reading-notes/atom.xml" rel="self"/>
   <link href="http://jiecaoc.github.io/"/>
-  <updated>2013-10-17T23:20:03-05:00</updated>
+  <updated>2013-10-17T23:22:26-05:00</updated>
   <id>http://jiecaoc.github.io/</id>
   <author>
     <name><![CDATA[Jiecao Chen]]></name>
@@ -31,10 +31,14 @@ or approximately a message selected at anohter point. --- Not very interesting, 
 <h3 id="encoder-decoder">1.2 Encoder, Decoder</h3>
 
 <h3 id="error-correcting-codes-for-the-binary-symmetric-channel">1.3 Error-correcting codes for the binary symmetric channel</h3>
-<blockquote>
-  <p>Repetition codes
-Block codes - Hamming code</p>
-</blockquote>
+<ul>
+  <li>Two types
+    <ul>
+      <li>Repetition codes</li>
+      <li>Block codes - Hamming code</li>
+    </ul>
+  </li>
+</ul>
 
 <h2 id="probability-entropy-and-inference">2 Probability, Entropy, and Inference</h2>
 
