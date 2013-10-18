@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>创建自己的 Mathematica 版 Diff - CJC's Blog</title>
+  <title>MacKay reading notes - CJC's Blog</title>
   <meta name="author" content="Jiecao Chen">
 
   
-  <meta name="description" content="大家在学习动态规划的时候也许都接触过求最长公共子序列(LCS)算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n^2)$, 这里的 $n$ 表示的是两个被对比序列的最大长度. 大家如果对最长公共子序列感兴趣的话, &hellip;">
+  <meta name="description" content="I’m trying to make this page a index of reading notes of the book Information Theory, Inference, and Learning Algorithms, which was written by David &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff">
+  <link rel="canonical" href="http://jiecaoc.github.io/blog/2013/10/17/mackay-reading-notes">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="CJC's Blog" type="application/atom+xml">
@@ -101,7 +101,7 @@
   
   <header>
     
-      <h1 class="entry-title">创建自己的 Mathematica 版 Diff</h1>
+      <h1 class="entry-title">MacKay Reading Notes</h1>
     
     
       <p class="meta">
@@ -117,26 +117,18 @@
   
 
 
-<time datetime="2013-10-05T18:21:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+<time datetime="2013-10-17T20:49:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>大家在学习动态规划的时候也许都接触过求<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列(LCS)</a>算法, 如果把原子类型的元素的相等性测试的代价看做是$O(1)$的话, LCS 经典的动态规划算法的时间复杂度为 $O(n^2)$, 这里的 $n$ 表示的是两个被对比序列的最大长度.</p>
+<div class="entry-content"><p>I’m trying to make this page a index of reading notes of  the book <code>Information Theory, Inference, and Learning Algorithms</code>, which was written by David J.C. MacKay, and the e-book is available in the author’s homepage <a href="http://www.inference.phy.cam.ac.uk/itila/book.html">Link</a>.</p>
 
-<!-- more -->
-
-<p>大家如果对<a href="http://zh.wikipedia.org/wiki/%E6%9C%80%E9%95%BF%E5%85%AC%E5%85%B1%E5%AD%90%E5%BA%8F%E5%88%97">最长公共子序列</a>感兴趣的话, 互联网上有许多相关的资料, 至少在这篇 post 里我们不会深入这个话题. 我们的今天主题和这个算法有很密切的关系, 因为我们将使用 <code>Mathematica</code> 内置的函数 <a href="http://reference.wolfram.com/mathematica/ref/SequenceAlignment.zh.html"><code>SequenceAlignment</code></a> 来构建一个 <code>Mathematica</code> 版本 <a href="http://en.wikipedia.org/wiki/Diff"><code>diff</code></a> 的函数, 而<a href="http://reference.wolfram.com/mathematica/ref/SequenceAlignment.zh.html"><code>SequenceAlignment</code></a> 背后使用的算法就恰恰是 LCS 的经典动态规划算法 (事实上也有 $O(n \log n)$ 的算法, 在后来的版本中, <code>SequenceAlignment</code> 采用的也许是那种算法). 借助于 <code>Mathematica</code> 的前端, 这个函数将会有更漂亮的输出结果.(这里插一句, unix 下面的 <a href="http://en.wikipedia.org/wiki/Diff"><code>diff</code></a> 也是用 LCS 算法实现的).</p>
-
-<p>PS:</p>
-
-<ul>
-  <li>在文章的前一部分讨论了部分实现的原理, 如果读者只是希望在 <code>Mathematica</code> 中有一个很好的 <code>diff</code> 函数的话, 可以跳过那些内容, 直接复制源代码就可以了. 也可以直接在<a href="https://github.com/MathCraft/MathCraftAddOn/blob/master/MathCraftAddOn/MathCraftAddOn/TextUtilities.m">这里</a>直接下载我写好的 package.</li>
-  <li>要理解源代码, 读者至少需要对 <code>Mathematica</code> 中的模式匹配, 函数式编程都有初步的了解. 我不会在此文中解释 <code>/@</code> 是什么算符, <code>__String</code> 又能代表什么. 读者可以查 <code>Mathematica</code> 文档去了解他们的用途. </li>
-</ul>
-
+<h2 id="part-0">Part 0</h2>
+<p>Including introduction to information theory, probability, entropy, and inference. 
+<a href="../mackay-part-0">Link</a></p>
 </div>
 
 
@@ -159,15 +151,21 @@
   
 
 
-<time datetime="2013-10-05T18:21:00-05:00" pubdate data-updated="true">Oct 5<span>th</span>, 2013</time>
+<time datetime="2013-10-17T20:49:00-05:00" pubdate data-updated="true">Oct 17<span>th</span>, 2013</time>
       
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/information-theory/'>Information Theory</a>, <a class='category' href='/blog/categories/reading-notes/'>Reading Notes</a>
+  
+</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff/" data-via="" data-counturl="http://jiecaoc.github.io/blog/2013/10/05/createyouowndiff/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jiecaoc.github.io/blog/2013/10/17/mackay-reading-notes/" data-via="" data-counturl="http://jiecaoc.github.io/blog/2013/10/17/mackay-reading-notes/" >Tweet</a>
   
   
   
@@ -176,8 +174,10 @@
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/blog/2013/10/05/math-test/" title="Previous Post: Latex test">&laquo; Latex test</a>
       
-        <a class="basic-alignment right" href="/blog/2013/10/05/mathematica-programming/" title="Next Post: 把 Mathematica 当做一种编程语言">把 Mathematica 当做一种编程语言 &raquo;</a>
+      
+        <a class="basic-alignment right" href="/blog/2013/10/17/mackay-part-0/" title="Next Post: mackay part 0">mackay part 0 &raquo;</a>
       
     </p>
   </footer>
